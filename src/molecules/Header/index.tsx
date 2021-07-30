@@ -54,6 +54,7 @@ function AppHeader(): JSX.Element {
             key={v.label}
             marginY={+enableDrawer}
             w={enableDrawer ? 'full' : ''}
+            onClick={() => history.push(v.path)}
             borderRadius={enableDrawer ? 'none' : 'base'}
             isActive={history.location.pathname === v.path}
           >
