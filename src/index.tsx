@@ -6,11 +6,12 @@ import { Global } from '@emotion/react';
 import 'focus-visible/dist/focus-visible';
 
 import styleReset from 'styleReset';
+import theme from 'configs/theme';
 import AppRouter from 'Router';
 
 export default function App(): JSX.Element {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Global styles={styleReset} />
       <AppRouter />
     </ChakraProvider>
