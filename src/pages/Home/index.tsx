@@ -1,9 +1,14 @@
 import React from 'react';
+import { Container } from '@chakra-ui/react';
+
+import AppLogo from 'molecules/logo';
 
 function HomePage(): JSX.Element {
   return (
     <>
-      <h1>Hello</h1>
+      <Container shadow="md" maxW="full" padding="6">
+        <AppLogo />
+      </Container>
     </>
   );
 }
