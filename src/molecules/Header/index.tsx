@@ -14,8 +14,10 @@ import {
   Spacer,
   Text,
   useBreakpointValue,
+  useColorMode,
   useDisclosure,
 } from '@chakra-ui/react';
+import DarkModeToggle from 'react-dark-mode-toggle';
 
 import AppLogo from 'atoms/AppLogo';
 import { SPACE } from 'configs/space';
@@ -24,14 +26,24 @@ import { links } from './data';
 
 function AppHeader(): JSX.Element {
   const isLoggedIn = false;
-  const history = useHistory();
   const enableDrawer = !!useBreakpointValue({ md: false, sm: true });
+  const colorMode = useColorMode();
   const drawer = useDisclosure();
+  const history = useHistory();
+
+  const themeContent = (
+    <DarkModeToggle
+      size={52}
+      onChange={colorMode.toggleColorMode}
+      checked={colorMode.colorMode === 'dark'}
+    />
+  );
 
   const content = (
     <ButtonGroup
       variant="ghost"
       colorScheme="blue"
+      alignItems="center"
       spacing={!enableDrawer ? SPACE[2] : 0}
       flexDirection={enableDrawer ? 'column' : 'row'}
     >
@@ -42,6 +54,7 @@ function AppHeader(): JSX.Element {
             key={v.label}
             marginY={+enableDrawer}
             w={enableDrawer ? 'full' : ''}
+            borderRadius={enableDrawer ? 'none' : 'base'}
             isActive={history.location.pathname === v.path}
           >
             <Text fontSize="sm">{v.label}</Text>
@@ -53,11 +66,14 @@ function AppHeader(): JSX.Element {
   return (
     <>
       <Container shadow="md" maxW="full" padding={SPACE[3]}>
-        <Flex>
+        <Flex alignItems="center">
           <AppLogo />
           <Spacer />
           {!enableDrawer ? (
-            content
+            <>
+              {content}
+              {themeContent}
+            </>
           ) : (
             <IconButton
               size="lg"
@@ -70,12 +86,25 @@ function AppHeader(): JSX.Element {
           )}
         </Flex>
       </Container>
-      <Drawer isOpen={drawer.isOpen} placement="left" onClose={drawer.onClose}>
+      <Drawer isOpen={drawer.isOpen && enableDrawer} placement="left" onClose={drawer.onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>Navigation</DrawerHeader>
           {content}
+          <Button
+            as="div"
+            w="full"
+            variant="ghost"
+            colorScheme="blue"
+            onClick={colorMode.toggleColorMode}
+            borderRadius="none"
+          >
+            <Text fontSize="sm" marginX={SPACE[2]}>
+              Theme
+            </Text>
+            {themeContent}
+          </Button>
         </DrawerContent>
       </Drawer>
     </>
