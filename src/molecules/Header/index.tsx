@@ -10,7 +10,7 @@ function AppHeader(): JSX.Element {
       <Flex>
         <AppLogo />
         <Spacer />
-        <ButtonGroup spacing={4} variant="outline" colorScheme="blue">
+        <ButtonGroup spacing={4} variant="ghost" colorScheme="blue">
           {links.map((v) => (
             <Button key={v.label}>
               <Text key={v.label}>{v.label}</Text>
