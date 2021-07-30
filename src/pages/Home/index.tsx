@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@chakra-ui/react';
 
-import AppLogo from 'molecules/logo';
+import AppLogo from 'atoms/logo';
 
 function HomePage(): JSX.Element {
   return (
