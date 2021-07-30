@@ -17,7 +17,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 
-import AppLogo from 'atoms/Logo';
+import AppLogo from 'atoms/AppLogo';
 import { SPACE } from 'configs/space';
 
 import { links } from './data';
