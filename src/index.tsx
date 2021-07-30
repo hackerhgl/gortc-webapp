@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { ThemeProvider, StyleReset } from 'atomize';
+import AppRouter from 'Router';
 
 const theme = {
   colors: {
@@ -15,7 +16,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <StyleReset />
       {/* <App /> */}
-      <h1>Hello</h1>
+      <AppRouter />
     </ThemeProvider>
   );
 }
