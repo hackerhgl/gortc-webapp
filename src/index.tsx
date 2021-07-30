@@ -5,10 +5,11 @@ import { ThemeProvider, StyleReset } from 'atomize';
 import { APP_THEME } from 'configs/theme';
 import AppRouter from 'Router';
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <ThemeProvider theme={APP_THEME}>
-      <StyleReset /> <AppRouter />
+      <StyleReset />
+      <AppRouter />
     </ThemeProvider>
   );
 }

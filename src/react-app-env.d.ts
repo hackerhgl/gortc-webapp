@@ -1,1 +1,1 @@
-declare module "atomize"
+declare module 'atomize';
