@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider, StyleReset } from 'atomize';
 
-import { APP_THEME } from 'configs/theme';
+import { ChakraProvider } from '@chakra-ui/react';
+
 import AppRouter from 'Router';
 
 export default function App(): JSX.Element {
   return (
-    <ThemeProvider theme={APP_THEME}>
-      <StyleReset />
+    <ChakraProvider>
       <AppRouter />
-    </ThemeProvider>
+    </ChakraProvider>
   );
 }
 
