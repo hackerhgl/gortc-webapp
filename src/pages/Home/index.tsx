@@ -1,14 +1,11 @@
 import React from 'react';
-import { Container } from '@chakra-ui/react';
 
-import AppLogo from 'atoms/logo';
+import AppHeader from 'molecules/Header';
 
 function HomePage(): JSX.Element {
   return (
     <>
-      <Container shadow="md" maxW="full" padding="6">
-        <AppLogo />
-      </Container>
+      <AppHeader />
     </>
   );
 }
