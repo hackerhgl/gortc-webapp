@@ -1,11 +1,10 @@
-import { defineMessages } from 'react-intl';
+import { generateMessages } from 'utils/intl';
 
-const messages = defineMessages({
-  hello: {
-    id: 'hello',
-    description: 'Meow',
-    defaultMessage: 'meow-x',
-  },
-});
+const scope = 'HomePage';
 
-export default messages;
+const messages = {
+  welcome: 'Welcome to GO RTC',
+  hello: 'Welcome to GO RTC',
+};
+
+export default generateMessages<keyof typeof messages>(scope, messages);

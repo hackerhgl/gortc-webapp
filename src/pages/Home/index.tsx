@@ -7,11 +7,12 @@ import messages from './messages';
 
 function HomePage(): JSX.Element {
   const intl = useIntl();
+
   return (
     <>
       <AppHeader />
       <Box>
-        <Text>{intl.formatMessage(messages.hello)}</Text>
+        <Text>{intl.formatMessage(messages.welcome)}</Text>
       </Box>
     </>
   );
