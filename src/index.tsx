@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ChakraProvider } from '@chakra-ui/react';
+import { IntlProvider } from 'react-intl';
 import { Global } from '@emotion/react';
 
 import 'focus-visible/dist/focus-visible';
@@ -9,11 +10,13 @@ import styleReset from 'styleReset';
 import theme from 'configs/theme';
 import AppRouter from 'Router';
 
-export default function App(): JSX.Element {
+function App(): JSX.Element {
   return (
     <ChakraProvider theme={theme}>
       <Global styles={styleReset} />
-      <AppRouter />
+      <IntlProvider locale="en" defaultLocale="en">
+        <AppRouter />
+      </IntlProvider>
     </ChakraProvider>
   );
 }
