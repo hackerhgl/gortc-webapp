@@ -5,9 +5,11 @@ import { LocaleState } from './types';
 const useLocale = create<LocaleState>((set) => ({
   list: [...locales],
   current: 'en',
+  didInit: false,
   change: (locale) => {
     set({ current: locale });
   },
+  init: () => {},
 }));
 
 export default useLocale;
