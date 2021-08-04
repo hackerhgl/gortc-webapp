@@ -13,6 +13,10 @@ import AppRouter from 'Router';
 
 function Wrapper(): JSX.Element {
   const locale = useLocale();
+  React.useEffect(() => {
+    locale.init();
+  }, []);
+
   return (
     <IntlProvider locale={locale.current} defaultLocale="en">
       <AppRouter />

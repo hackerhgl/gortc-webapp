@@ -10,15 +10,13 @@ function HomePage(): JSX.Element {
   const intl = useIntl();
   const locale = useLocale();
 
-  console.log(locale.current);
-
   return (
     <>
       <AppHeader />
       <Box>
         <Text>{intl.formatMessage(messages.welcome)}</Text>
       </Box>
-      <Text>{locale.current}</Text>
+      <Text fontSize="2xl">{locale.current}</Text>
       {locale.list.map((v) => (
         <Button key={v} onClick={() => locale.change(v)}>
           <Text>{v}</Text>
