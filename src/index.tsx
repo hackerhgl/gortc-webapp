@@ -3,20 +3,28 @@ import ReactDOM from 'react-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import { IntlProvider } from 'react-intl';
 import { Global } from '@emotion/react';
-
 import 'focus-visible/dist/focus-visible';
+
+import useLocale from 'containers/locale';
 
 import styleReset from 'styleReset';
 import theme from 'configs/theme';
 import AppRouter from 'Router';
 
+function Wrapper(): JSX.Element {
+  const locale = useLocale();
+  return (
+    <IntlProvider locale={locale.current} defaultLocale="en">
+      <AppRouter />
+    </IntlProvider>
+  );
+}
+
 function App(): JSX.Element {
   return (
     <ChakraProvider theme={theme}>
       <Global styles={styleReset} />
-      <IntlProvider locale="en" defaultLocale="en">
-        <AppRouter />
-      </IntlProvider>
+      <Wrapper />
     </ChakraProvider>
   );
 }
