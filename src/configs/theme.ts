@@ -5,7 +5,8 @@ const theme = extendTheme({
     Buttons: {},
   },
   config: {
-    useSystemColorMode: true,
+    initialColorMode: 'light',
+    useSystemColorMode: false,
   },
 });
 
