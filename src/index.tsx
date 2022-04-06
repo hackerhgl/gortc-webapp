@@ -11,6 +11,8 @@ import styleReset from 'styleReset';
 import theme from 'configs/theme';
 import AppRouter from 'Router';
 
+import './index.css';
+
 function Wrapper(): JSX.Element {
   const locale = useLocale();
   React.useEffect(() => {

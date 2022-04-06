@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { Button, Container, Flex, Text } from '@chakra-ui/react';
+// import { Button, Container, Flex, Text } from '@chakra-ui/react';
 
 import { SPACE } from 'configs/space';
 
@@ -13,20 +13,21 @@ function Footer(): JSX.Element {
   const locale = useLocale();
 
   return (
-    <Container maxW="container.lg" p={SPACE[2]} display="flex" alignItems="center">
-      <Text>
-        {intl.formatMessage(messages.title, {
-          year: new Date().getFullYear(),
-        })}
-      </Text>
-      <Flex flex={1} />
-      <Text>{intl.formatMessage(messages.choose)}</Text>
-      {locale.list.map((v) => (
-        <Button key={v} onClick={() => locale.change(v)} marginX={SPACE[1]}>
-          <Text>{v}</Text>
-        </Button>
-      ))}
-    </Container>
+    <h1>footer</h1>
+    // <Container maxW="container.lg" p={SPACE[2]} display="flex" alignItems="center">
+    //   <Text>
+    //     {intl.formatMessage(messages.title, {
+    //       year: new Date().getFullYear(),
+    //     })}
+    //   </Text>
+    //   <Flex flex={1} />
+    //   <Text>{intl.formatMessage(messages.choose)}</Text>
+    //   {locale.list.map((v) => (
+    //     <Button key={v} onClick={() => locale.change(v)} marginX={SPACE[1]}>
+    //       <Text>{v}</Text>
+    //     </Button>
+    //   ))}
+    // </Container>
   );
 }
 
